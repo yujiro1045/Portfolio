@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/icons/Badge.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import SocialPill from "../components/icons/SocialPill.astro";
+import GmailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import Container from "../components/Container.astro";
+import BriefCase from "../components/icons/BriefCase.astro";
+---
+
+<Layout
+  title="Portfolio de Juan Medina - frontend developer web & mobile"
+  description={`Soy un desarrollador frontend especializado en crear interfaces de usuario atractivas y responsivas,
+	 me apasiona construir aplicaciones web dinámicas y optimizadas`}
+>
+  <main>
+    <Container class="py-44 pb-24">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="./img/foto-juan.jpeg"
+        alt="juan foto"
+      />
+      <h1
+        class="text-white text-5xl font-bold flex justify-center flex-row gap-x-4 pb-10"
+      >
+        Hey, soy Juan Medina
+        <a
+          href="https://www.linkedin.com/in/juan-medina-93a79a262"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-2xl opacity-80 text-wrap">
+        <span class="text-yellow-100/90 opacity-80"
+          >Con 2 años de experiencia en desarrollo web y mobile.</span
+        >
+        <span class="text-blue-100/90">De barranquilla, Colombia.</span>
+        <span class="text-red-100/90"
+          >Apasionado en realizar creaciones unicas.</span
+        >
+      </h2>
+
+      <nav class="flex gap-x-2 mt-8">
+        <SocialPill href="https://www.linkedin.com/in/juan-medina-93a79a262">
+          <LinkedInIcon class="size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/yujiro1045">
+          <GithubIcon class="size-6" />
+          Github
+        </SocialPill>
+        <SocialPill href="https://github.com/yujiro1045">
+          <GmailIcon class="size-6" />
+          juanmedi730@gmail.com
+        </SocialPill>
+      </nav>
+    </Container>
+
+    <Container id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
+        <BriefCase size="8" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </Container>
+  </main>
+</Layout>
