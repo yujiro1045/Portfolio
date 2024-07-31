@@ -1,0 +1,82 @@
+---
+import Next from "./icons/Next.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Javascript from "./icons/Javascript.astro";
+import React from "./icons/React.astro";
+import Typescript from "./icons/Typescript.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: Next,
+  },
+
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-black text-white",
+    icon: Tailwind,
+  },
+
+  JAVASCRIPT: {
+    name: "javascript",
+    class: "bg-black text-white",
+    icon: Javascript,
+  },
+
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+
+  TYPESCRIPT: {
+    name: "typescript",
+    class: "bg-black text-white",
+    icon: Typescript,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Teslo-Shop Tienda de ropa de tesla",
+    description:
+      "Creada con Next.js es una pagina de una tienda de ropa de la marca tesla, la cual tiene ropa para hombres, mujeres y niños, cuanto con un carrito de compras y un navbar y sideBar totalmente funcionales ",
+    github: "https://github.com/yujiro1045/Teslo-shop",
+    image: "/projects/teslo-shop.webp",
+    tags: [
+      TAGS.NEXT,
+      TAGS.TAILWIND,
+      TAGS.JAVASCRIPT,
+      TAGS.REACT,
+      TAGS.TYPESCRIPT,
+    ],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-4 flex-row pb-4">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-3 justify-center items-center`}
+            >
+              <tag.icon class="size-8" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+    </article>
+  ))
+}
