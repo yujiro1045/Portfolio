@@ -4,6 +4,8 @@ import Tailwind from "./icons/Tailwind.astro";
 import Javascript from "./icons/Javascript.astro";
 import React from "./icons/React.astro";
 import Typescript from "./icons/Typescript.astro";
+import native from "./icons/Native.astro";
+import { navigate } from "astro:transitions/client";
 
 const TAGS = {
   NEXT: {
@@ -35,6 +37,11 @@ const TAGS = {
     class: "bg-black text-white",
     icon: Typescript,
   },
+  NATIVE: {
+    name: "react-native",
+    class: "bg-black text-white",
+    icon: native,
+  },
 };
 
 const PROJECTS = [
@@ -52,12 +59,24 @@ const PROJECTS = [
       TAGS.TYPESCRIPT,
     ],
   },
+  {
+    title: "FilmHub",
+    description:
+      "Esta es una app creada con React-Native expo, la cual es una aplicacion que muestra las peliculas mas populares del momento, contiene un buscador y una pantalla de favoritos en donde pueden guardar sus peliculas favoritas y a la vez eliminarlas de esa lista",
+    tags: [TAGS.JAVASCRIPT, TAGS.NATIVE, TAGS.TYPESCRIPT],
+    image: [
+      "/projects/FilmHub1.jpeg",
+      "/projects/FilmHub3.jpeg",
+      "/projects/FilmHub4.jpeg",
+    ],
+  },
 ];
 ---
 
 {
   PROJECTS.map(({ title, description, tags, image }) => (
-    <article>
+    <article class="mb-8">
+      {/* Añade un margen inferior de 8 para separar los proyectos */}
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-4 flex-row pb-4">
@@ -72,11 +91,24 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
+      {Array.isArray(image) ? (
+        <div class="flex justify-center gap-4 bg-black p-4 rounded-xl border-2 border-white shadow-2xl">
+          {image.map((img, index) => (
+            <img
+              key={index}
+              class="transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-2xl rounded-xl shadow-white/10 w-1/4 h-auto"
+              src={img}
+              alt={`Captura de pantalla del proyecto ${img}`}
+            />
+          ))}
+        </div>
+      ) : (
+        <img
+          class="transition-transform duration-300 ease-in-out transform hover:scale-105 rounded-xl border-2 border-white shadow-2xl shadow-white/10"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
+        />
+      )}
     </article>
   ))
 }
