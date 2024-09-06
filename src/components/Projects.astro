@@ -76,7 +76,6 @@ const PROJECTS = [
 {
   PROJECTS.map(({ title, description, tags, image }) => (
     <article class="mb-8">
-      {/* Añade un margen inferior de 8 para separar los proyectos */}
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-4 flex-row pb-4">
@@ -95,7 +94,6 @@ const PROJECTS = [
         <div class="flex justify-center gap-4 bg-black p-4 rounded-xl border-2 border-white shadow-2xl">
           {image.map((img, index) => (
             <img
-              key={index}
               class="transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-2xl rounded-xl shadow-white/10 w-1/4 h-auto"
               src={img}
               alt={`Captura de pantalla del proyecto ${img}`}

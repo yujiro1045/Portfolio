@@ -12,81 +12,12 @@ import CodeIcon from "../components/icons/Code.astro";
 import Projects from "../components/Projects.astro";
 ---
 
-<!-- <Layout
-  title="Portfolio de Juan Medina - frontend developer web & mobile"
-  description={`Soy un desarrollador frontend especializado en crear interfaces de usuario atractivas y responsivas,
-	 me apasiona construir aplicaciones web dinámicas y optimizadas`}
->
-  <main class="px-4">
-    <Container class="py-44 pb-24">
-      <img
-        class="rounded-full size-12 mb-4"
-        src="./img/foto-juan.jpeg"
-        alt="juan foto"
-      />
-      <h1
-        class="text-white text-3xl md:text-4-xl lg:text-5xl font-bold flex justify-center flex-row gap-x-4 pb-6 lg:pb-10"
-      >
-        Hey, soy Juan Medina
-        <a
-          href="https://www.linkedin.com/in/juan-medina-93a79a262"
-          target="_blank"
-          rel="noopener"
-          class="flex justify-center items-center"
-        >
-          <Badge>Disponible para trabajar</Badge>
-        </a>
-      </h1>
-      <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
-        <span class="text-yellow-100/90 opacity-80"
-          >Con 2 años de experiencia en desarrollo web y mobile.</span
-        >
-        <span class="text-blue-100/90">De Barranquilla, Colombia.</span>
-        <span class="text-red-100/90"
-          >Apasionado en realizar creaciones únicas.</span
-        >
-      </h2>
-
-      <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://www.linkedin.com/in/juan-medina-93a79a262">
-          <LinkedInIcon class="size-4 md:size-6" />
-          LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/yujiro1045">
-          <GithubIcon class="size-4 md:size-6" />
-          Github
-        </SocialPill>
-        <SocialPill href="mailto:juanmedi730@gmail.com">
-          <GmailIcon class="size-4 md:size-6" />
-          juanmedi730@gmail.com
-        </SocialPill>
-      </nav>
-    </Container>
-
-    <Container id="experiencia">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
-        <BriefCase size="8" />
-        Experiencia laboral
-      </h2>
-      <Experience />
-    </Container>
-
-    <Container id="experiencia">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
-        <CodeIcon class="size-17" />
-        Proyectos
-      </h2>
-      <Projects />
-    </Container>
-  </main>
-</Layout> -->
 <Layout
   title="Portfolio de Juan Medina - frontend developer web & mobile"
   description={`Soy un desarrollador frontend especializado en crear interfaces de usuario atractivas y responsivas,
 	 me apasiona construir aplicaciones web dinámicas y optimizadas`}
 >
   <main class="relative min-h-screen">
-    {/* Asegúrate de que el main tenga la altura completa de la pantalla */}
     <div
       class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24
 			[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
